@@ -1,0 +1,192 @@
+{
+   "cap_add" : null,
+   "cap_drop" : null,
+   "cmd" : "apache2-foreground",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : true,
+   "enabled" : false,
+   "env_variables" : [
+      {
+         "key" : "DAV_ENABLED",
+         "value" : "true"
+      },
+      {
+         "key" : "SENTRY_SUPPORT",
+         "value" : "false"
+      },
+      {
+         "key" : "ENABLE_GEOLOCATION",
+         "value" : "false"
+      },
+      {
+         "key" : "POLICY_COMPLIANT",
+         "value" : "false"
+      },
+      {
+         "key" : "ALLOW_STATISTICS_THROUGH_PUBLIC_API_ACCESS",
+         "value" : "true"
+      },
+      {
+         "key" : "DEFAULT_FILESYSTEM",
+         "value" : "public"
+      },
+      {
+         "key" : "DEFAULT_MAX_STORAGE_SIZE",
+         "value" : "4096"
+      },
+      {
+         "key" : "DEFAULT_MAX_UPLOAD_SIZE",
+         "value" : "10240"
+      },
+      {
+         "key" : "QUEUE_CONNECTION",
+         "value" : "sync"
+      },
+      {
+         "key" : "SESSION_LIFETIME",
+         "value" : "120"
+      },
+      {
+         "key" : "SESSION_DRIVER",
+         "value" : "file"
+      },
+      {
+         "key" : "CACHE_DRIVER",
+         "value" : "database"
+      },
+      {
+         "key" : "CHECK_VERSION",
+         "value" : "true"
+      },
+      {
+         "key" : "MAIL_FROM_NAME",
+         "value" : "Monica"
+      },
+      {
+         "key" : "MAIL_FROM_ADDRESS",
+         "value" : "gmail_username@gmail.com"
+      },
+      {
+         "key" : "MAIL_ENCRYPTION",
+         "value" : "tls"
+      },
+      {
+         "key" : "MAIL_PASSWORD",
+         "value" : "secret"
+      },
+      {
+         "key" : "MAIL_USERNAME",
+         "value" : "gmail_username"
+      },
+      {
+         "key" : "MAIL_PORT",
+         "value" : "587"
+      },
+      {
+         "key" : "MAIL_HOST",
+         "value" : "smtp.gmail.com"
+      },
+      {
+         "key" : "MAIL_MAILER",
+         "value" : "smtp"
+      },
+      {
+         "key" : "DB_USE_UTF8MB4",
+         "value" : "true"
+      },
+      {
+         "key" : "HASH_LENGTH",
+         "value" : "18"
+      },
+      {
+         "key" : "HASH_SALT",
+         "value" : "FI6xKOVB5PrSc6j1U0M8"
+      },
+      {
+         "key" : "APP_KEY",
+         "value" : "m2IiTb6XDfkh3oOtBMIUmsmb14Hrb2mk"
+      },
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      },
+      {
+         "key" : "PHP_OPCACHE_VALIDATE_TIMESTAMPS",
+         "value" : "0"
+      },
+      {
+         "key" : "PHP_OPCACHE_MAX_ACCELERATED_FILES",
+         "value" : "20000"
+      },
+      {
+         "key" : "PHP_OPCACHE_MEMORY_CONSUMPTION",
+         "value" : "192"
+      },
+      {
+         "key" : "PHP_OPCACHE_MAX_WASTED_PERCENTAGE",
+         "value" : "10"
+      },
+      {
+         "key" : "DB_PASSWORD",
+         "value" : "password"
+      },
+      {
+         "key" : "DB_USERNAME",
+         "value" : "monica_user"
+      },
+      {
+         "key" : "DB_DATABASE",
+         "value" : "monica_db"
+      },
+      {
+         "key" : "DB_PORT",
+         "value" : "3306"
+      },
+      {
+         "key" : "DB_HOST",
+         "value" : "NAS_ip"
+      },
+      {
+         "key" : "DB_CONNECTION",
+         "value" : "mysql"
+      },
+      {
+         "key" : "APP_DEBUG",
+         "value" : "false"
+      },
+      {
+         "key" : "APP_ENV",
+         "value" : "local"
+      }
+   ],
+   "exporting" : false,
+   "id" : "af8698838f72e23a34fb3750e42811c6545550660f134fdfb202cc060267f46a",
+   "image" : "monicahq/monicahq:latest",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 1073741824,
+   "name" : "monica",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "bridge"
+      }
+   ],
+   "network_mode" : "bridge",
+   "port_bindings" : [
+      {
+         "container_port" : 80,
+         "host_port" : 4000,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "use_host_network" : false,
+   "volume_bindings" : []
+}

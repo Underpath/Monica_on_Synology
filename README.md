@@ -29,6 +29,14 @@ A guide to install [Monica](https://github.com/monicahq/monica) on a Synology NA
 #### Debugging
 > :beetle: **If you need to debug MariaDB issues, the error log is available at** `/var/packages/MariaDB10/target/mysql/io.err`
 
+## Set up storage
+
+Here we'll set up storage so that some of the data from the container can be persisted on the NAS itself. This will allow us to update the image and not have to worry about having to re-create pictures or other files.
+
+1. If you already have a user dedicated to allowing containers access to files on the NAS, skip this section. Otherwise, create a folder on your NAS where you'll store the files from Monica.
+1. Using Synology's **Control Panel**, create a user and a group. These will be used exclusively so that the container can access files on the NAS so the only permissions they need are read/write on the folder you just created. Go ahead and set up the permissions.
+1. Log into the NAS using SSH (Do this with your regular user, not the dedicated one). Then type `id docker_user` replacing *"docker_user"* with the user you just created; make a note of the `uid` and `gid` (You'll need them later).
+
 ## Set up Monica container
 
 1. Open the **Docker** package in **Package Center**.
@@ -39,7 +47,10 @@ A guide to install [Monica](https://github.com/monicahq/monica) on a Synology NA
    * **`HASH_SALT`:** Change this to a random string of your choice.
    * **`APP_ENV`:** This value must be `local`, otherwise you won't be able to connect.
    * **Variables starting with `DB_`:** Change these to the values you used earlier for the DB setup.
+   * **`APP_DEBUG`:** This is set to `false` in the provided file but might be worth flipping to `true` if you're doing some debugging.
+   * **`PUID` and `PGID`:** Match these to the corresponding ones of the Synology user you're using to manage storage for the container.
 1. You may also want to modify the port settings, so that the an unused port on the NAS is mapped to the container's port 80.
+1. Make sure to edit the Volume settings to reflect your own. Select the folder you created to store Monica's files and set `/var/www/monica/storage` as the mount path.
 1. Start the container, then right click on it and go into *Details*. Go to the terminal tab. You should see the terminal output while Monica sets up the DB. This step will take a while (In my case it took almost 20 mins). The step that took the longest was:
    ```
    ✓ Performing migrations                                                        

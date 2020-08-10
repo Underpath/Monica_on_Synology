@@ -9,6 +9,22 @@
    "enabled" : false,
    "env_variables" : [
       {
+         "key" : "PUID",
+         "value" : "1027"
+      },
+      {
+         "key" : "PGID",
+         "value" : "100"
+      },
+      {
+         "key" : "CRON_LEGACY",
+         "value" : "true"
+      },
+      {
+         "key" : "REQUIRES_SUBSCRIPTION",
+         "value" : "false"
+      },
+      {
          "key" : "DAV_ENABLED",
          "value" : "true"
       },
@@ -188,5 +204,11 @@
       "enable_shortcut" : false
    },
    "use_host_network" : false,
-   "volume_bindings" : []
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/Monica/storage",
+         "mount_point" : "/var/www/monica/storage",
+         "type" : "rw"
+      }
+   ]
 }

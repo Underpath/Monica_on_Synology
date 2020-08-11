@@ -60,9 +60,3 @@ Here we'll set up storage so that some of the data from the container can be per
 
 #### Debugging
 > :beetle: **To test your e-mail setup, open up a `sh` terminal on the container and run** `php artisan monica:test-email`
-
-# Known issues
-
-### Reminders do not work
-
-While e-mails in generally work as expected, reminder e-mails do not work; this is a known issue related to running Monica using Docker. I've attempted to resolve this by adding the `CRON_LEGACY` variable as per [this issue](https://github.com/monicahq/monica/issues/3973) and the `REQUIRES_SUBSCRIPTION` variable as per [this comment](https://github.com/monicahq/monica/issues/1436#issuecomment-436403379) but neither helped. The proposed solution in [this issue](https://github.com/monicahq/monica/issues/3324) did not help either.

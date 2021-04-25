@@ -40,7 +40,7 @@ Here we'll set up storage so that some of the data from the container can be per
 ## Set up Monica container
 
 1. Open the **Docker** package in **Package Center**.
-1. In the **Registry** tab, search for *Monica* and download the image `monica`.
+1. In the **Registry** tab, search for *Monica* and download the image `monica`. Use the latest tag for the most up to date image.
 1. Next, you'll either need create the container. You can achieve this by importing the [provided JSON file](files/monica.json) or by adding one from the **Image** tab in docker.
 1. Before launching the container, you'll need to edit the values of some of the environmental variables. In the **Container** tab right click the *Monica* container and *Edit*, then head to the **Environment** tab. Alternatively edit the JSON file before importing.
    * **Variables starting with `MAIL_`:** If you want to receive e-mail reminders, change those values to suit your e-mail provider.
@@ -60,3 +60,12 @@ Here we'll set up storage so that some of the data from the container can be per
 
 #### Debugging
 > :beetle: **To test your e-mail setup, open up a `sh` terminal on the container and run** `php artisan monica:test-email`
+
+## Updates
+
+> :warning: **Clearing the container will remove any data in it. While the database should still be intact, you may lose local files such as images unless you've set up storage as suggested above**
+
+1. Open the **Docker** package in **Package Center**.
+1. In the **Registry** tab, search for *Monica* and download the image `monica`. Use the latest tag for the most up to date image, this will replace the existing image.
+1. After the download is complete, stop the container. Then right click on it and under **Action** select *Clear*. The container may disappear for a few seconds.
+1. Start the container again. It should be using the newest image.

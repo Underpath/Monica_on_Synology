@@ -179,7 +179,7 @@
    ],
    "exporting" : false,
    "id" : "af8698838f72e23a34fb3750e42811c6545550660f134fdfb202cc060267f46a",
-   "image" : "monicahq/monicahq:latest",
+   "image" : "monica:latest",
    "is_ddsm" : false,
    "is_package" : false,
    "links" : [],
